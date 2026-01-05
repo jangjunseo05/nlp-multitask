@@ -1,4 +1,20 @@
-# nlp
+# Multi-task NLP with GPT-2: Bridging the Gap between Model and Human Expectation
+
+## 📌 Project Overview
+Exploring the boundaries of **Human-AI Interaction** through three distinct NLP tasks: Sentiment Classification, Paraphrase Detection, and Sonnet Generation using GPT-2.
+
+## 🛠️ Key Research Points & Decisions
+* **Constraint-aware Generation (Sonnet)**
+  - Designed a custom **Rhyme Loss** based on the cosine similarity of end-word embeddings to enforce poetic structures.
+  - Implemented post-processing to guarantee the 14-line Shakespearean format, aligning model output with strict human stylistic expectations.
+* **Efficiency & Precision (Paraphrase) **
+  - Applied **LoRA (Low-Rank Adaptation)** for parameter-efficient fine-tuning.
+  - Used **Hard Negative Priority (HNP)** training to refine the model's decision boundaries on high-confidence incorrect samples.
+
+## 📊 Insights
+- This project reinforced my perspective that AI struggles not due to capacity, but due to the **inherent ambiguity and noise** in human-generated data.
+  
+## Guide
 colab에서 https://github.com/hocheol0303/nlp/main.ipynb 파일을 실행하여 프로젝트를 확인할 수 있습니다.<br>
 main.ipynb 파일에 들어가서 위부터 Shift + Enter만 입력하면 Part-1부터 Part-2까지 모델의 학습, 모델 가중치 저장, test output csv 저장을 진행하도록 jupyter notebook을 작성했습니다.
 
