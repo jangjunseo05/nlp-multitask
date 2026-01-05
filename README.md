@@ -7,7 +7,7 @@ Exploring the boundaries of **Human-AI Interaction** through three distinct NLP 
 * **Constraint-aware Generation (Sonnet)**
   - Designed a custom **Rhyme Loss** based on the cosine similarity of end-word embeddings to enforce poetic structures.
   - Implemented post-processing to guarantee the 14-line Shakespearean format, aligning model output with strict human stylistic expectations.
-* **Efficiency & Precision (Paraphrase) **
+* **Efficiency & Precision (Paraphrase)**
   - Applied **LoRA (Low-Rank Adaptation)** for parameter-efficient fine-tuning.
   - Used **Hard Negative Priority (HNP)** training to refine the model's decision boundaries on high-confidence incorrect samples.
 
