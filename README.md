@@ -23,7 +23,7 @@ This project explores the boundaries of **Human-AI Interaction** by implementing
 * **Sonnet:** Successfully reduced Perplexity (35.68 → 34.15) and improved structural completedness, though qualitative analysis still shows challenges in long-term semantic flow.
 
 ## 💡 Human-centered Insights
-Coming from a background in English Literature, I observed that AI struggles not due to model capacity, but because human-generated data is **inherently ambiguous and context-dependent** . This project reinforced my belief that **Human-centric system design**—such as Rhyme Loss for poetic intent or Cascade models for nuanced sentiment—is essential for aligning AI with human expectations .
+This project reinforced my perspective that AI struggles not due to capacity, but due to the inherent ambiguity and noise in human-generated data.
   
 ## Guide
 colab에서 https://github.com/hocheol0303/nlp/main.ipynb 파일을 실행하여 프로젝트를 확인할 수 있습니다.<br>
