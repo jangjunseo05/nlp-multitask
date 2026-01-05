@@ -1,18 +1,31 @@
 # Multi-task NLP with GPT-2: Bridging the Gap between Model and Human Expectation
 
+# GPT2-Human-centric-NLP: Aligning Model Outputs with Human Intent and Constraints
+
 ## 📌 Project Overview
-Exploring the boundaries of **Human-AI Interaction** through three distinct NLP tasks: Sentiment Classification, Paraphrase Detection, and Sonnet Generation using GPT-2.
+This project explores the boundaries of **Human-AI Interaction** by implementing a multi-task NLP system using GPT-2. The focus was on bridging the gap between model capacity and the inherent ambiguity of human-generated data across three tasks: Sentiment Classification, Paraphrase Detection, and Sonnet Generation.
 
 ## 🛠️ Key Research Points & Decisions
-* **Constraint-aware Generation (Sonnet)**
-  - Designed a custom **Rhyme Loss** based on the cosine similarity of end-word embeddings to enforce poetic structures.
-  - Implemented post-processing to guarantee the 14-line Shakespearean format, aligning model output with strict human stylistic expectations.
-* **Efficiency & Precision (Paraphrase)**
-  - Applied **LoRA (Low-Rank Adaptation)** for parameter-efficient fine-tuning.
-  - Used **Hard Negative Priority (HNP)** training to refine the model's decision boundaries on high-confidence incorrect samples.
 
-## 📊 Insights
-- This project reinforced my perspective that AI struggles not due to capacity, but due to the **inherent ambiguity and noise** in human-generated data.
+### 1️⃣ Sentiment Classification: Overcoming Imbalance
+- **Strategy:** Implemented a **Coarse-to-Fine Cascade model** (2-stage & 3-stage) and data rephrasing techniques.
+- **Research Decision:** After empirical evaluation, I opted for the **2-stage model** as the final architecture.My analysis showed that deeper cascades (3-stage) suffered from **error propagation**, proving that model complexity must be balanced with training stability in fine-grained tasks.
+
+### 2️⃣ Paraphrase Detection: Efficiency & Precision 
+- **Strategy:** Applied **LoRA (Low-Rank Adaptation)** for parameter-efficient fine-tuning and **Hard Negative Priority (HNP)** training.
+- **Research Decision:** Analyzed the **trade-off between confidence and noise** in HNP. While HNP targets difficult samples, I discovered that training on high-confidence incorrect samples can sometimes act as noise, leading to a refined strategy of merging hard negatives with original training data.
+
+### 3️⃣ Sonnet Generation: Aligning with Human Constraints 
+- **Strategy:** Developed a Shakespearean sonnet generator incorporating a custom **Rhyme Loss** based on the cosine similarity of end-word embeddings.
+- **Research Decision:** Implemented a 14-line post-processing logic to ensure structural fidelity. This resulted in a **significant improvement in Rhyme Accuracy (0.00 → 0.12)** without degrading semantic coherence (BERTScore), demonstrating the efficacy of enforcing poetic constraints in generative models.
+
+## 📊 Results & Honest Evaluation
+* **Sentiment:** While rephrasing improved the F1-score (0.41 → 0.44), the Cascade structure revealed a bottleneck in the coarse classifier's accuracy.
+* **Paraphrase:** Baseline GPT-2 (5 epoch) remained more stable than HNP-only tuning, highlighting the sensitivity of confidence thresholds in sample selection.
+* **Sonnet:** Successfully reduced Perplexity (35.68 → 34.15) and improved structural completedness, though qualitative analysis still shows challenges in long-term semantic flow.
+
+## 💡 Human-centered Insights
+Coming from a background in English Literature, I observed that AI struggles not due to model capacity, but because human-generated data is **inherently ambiguous and context-dependent** . This project reinforced my belief that **Human-centric system design**—such as Rhyme Loss for poetic intent or Cascade models for nuanced sentiment—is essential for aligning AI with human expectations .
   
 ## Guide
 colab에서 https://github.com/hocheol0303/nlp/main.ipynb 파일을 실행하여 프로젝트를 확인할 수 있습니다.<br>
