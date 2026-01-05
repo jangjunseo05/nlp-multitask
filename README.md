@@ -1,7 +1,5 @@
 # Multi-task NLP with GPT-2: Bridging the Gap between Model and Human Expectation
 
-# GPT2-Human-centric-NLP: Aligning Model Outputs with Human Intent and Constraints
-
 ## 📌 Project Overview
 This project explores the boundaries of **Human-AI Interaction** by implementing a multi-task NLP system using GPT-2. The focus was on bridging the gap between model capacity and the inherent ambiguity of human-generated data across three tasks: Sentiment Classification, Paraphrase Detection, and Sonnet Generation.
 
